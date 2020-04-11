@@ -1,0 +1,40 @@
+.productions-list-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template: auto / repeat(3, 1fr); */
+  grid-template-rows: auto;
+  column-gap: 10px;
+  row-gap: 20px;
+  /* gap: 20px 10px; */
+  justify-items: center;
+  align-items: center;
+  /* place-items: stretch stretch; */
+}
+
+.productions-list-element {
+  max-width: 300px;
+  display: inline-block;
+}
+
+.productions-list-image {
+  width: 100%;
+}
+
+@media (max-width: 996px) and (min-width: 696px) {
+  .productions-list-container {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1.5%;
+  }
+}
+
+@media (max-width: 695px) {
+  .productions-list-container {
+    grid-template-columns: 1fr;
+    row-gap: 1.5%;
+  }
+
+  .productions-list-element {
+    max-width: 380px;
+  }
+}

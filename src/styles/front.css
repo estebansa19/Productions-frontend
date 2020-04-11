@@ -1,0 +1,21 @@
+.frontWrapper {
+  background-color: #90caf9;
+  height: 100vh;
+}
+
+.frontContainer {
+  padding: 0px;
+  height: 80%;
+  margin: 0;
+  position: relative;
+  z-index: 9;
+}
+
+.frontContainer .center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
