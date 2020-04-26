@@ -15,3 +15,11 @@ export const UPDATE_PRODUCTION = gql`
     }
   }
 `
+
+export const DELETE_PRODUCTION = gql`
+  mutation deleteProduction($id: ID!) {
+    deleteProduction(id: $id) {
+      message
+    }
+  }
+`

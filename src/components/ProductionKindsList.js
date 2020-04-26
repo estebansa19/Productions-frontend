@@ -8,12 +8,13 @@ import MovieIcon from '@material-ui/icons/Movie';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import TvIcon from '@material-ui/icons/Tv';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import '../styles/productionKindsList.css'
 import { PRODUCTION_KINDS } from '../api/queries'
 
 function ProductionKindsList(props) {
   const { loading, error, data } = useQuery(PRODUCTION_KINDS)
-  if (loading) return <h1>Loading...</h1>
+  if (loading) return <CircularProgress className='loader' />
   if (error) return <h1>Oops xD</h1>
   if (data.productionKinds.length === 0) return <h1>There's nothing to see unu</h1>
 

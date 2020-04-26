@@ -34,7 +34,6 @@ export default function ProductionForm(props) {
     id: parseInt(production.id),
     title: production.title,
     description: production.description,
-    rate: production.title,
     date: production.date,
     image: production.image || '',
     rate: parseInt(production.rate),
@@ -170,7 +169,7 @@ export default function ProductionForm(props) {
 
       <div className="production-new-actions">
         <Button variant="contained" color="primary" onClick={updateProduction}>
-          Crear
+          Editar
         </Button>
 
         <Link to='/productions'>Ir atrás</Link>

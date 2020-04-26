@@ -15,7 +15,7 @@ export default function ProductionNew(props) {
   const [state, setState] = useState({ productionKindId: 2, date: formatDate(new Date()), image: null })
   const { loading, error, data } = useQuery(PRODUCTION_KINDS)
 
-  const [createProduction, mutationData] = useMutation(ADD_PRODUCTION, {
+  const [createProduction] = useMutation(ADD_PRODUCTION, {
     onCompleted: () => {
       props.history.push('/productions')
     },

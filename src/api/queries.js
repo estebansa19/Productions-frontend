@@ -29,3 +29,20 @@ export const PRODUCTION_AND_KINDS = gql`
     }
   }
 `
+
+export const PRODUCTIONS = gql`
+  query Productions($kindId: ID) {
+    productions(kindId: $kindId) {
+      id,
+      title,
+      date
+      description,
+      image,
+      rate,
+      productionKind {
+        id,
+        name
+      }
+    }
+  }
+`

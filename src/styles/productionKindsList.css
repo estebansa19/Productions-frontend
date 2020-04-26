@@ -16,3 +16,10 @@
 .production-kinds-list li:hover {
   cursor: pointer;
 }
+
+.loader {
+  width: 30px;
+  height: 30px;
+  margin: 15px;
+  color: #8893d1 !important;
+}

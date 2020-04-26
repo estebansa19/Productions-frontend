@@ -9,18 +9,18 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 import ProductionEditForm from '../components/ProductionEditForm'
 import { PRODUCTION_AND_KINDS } from '../api/queries'
 import { UPDATE_PRODUCTION } from '../api/mutations'
+import Loading from '../components/Loading'
 
 export default function ProductionEdit(props) {
   const productionId = parseInt(props.match.params.productionId)
   const { loading, error, data } = useQuery(PRODUCTION_AND_KINDS, { variables: { id: productionId } })
 
-  const [updateProduction, mutationData] = useMutation(UPDATE_PRODUCTION , {
+  const [updateProduction] = useMutation(UPDATE_PRODUCTION , {
     onCompleted: () => {
       props.history.push('/productions', { refresh: true })
     }
   })
 
-  if (loading) return <h1>Loading...</h1>
   if (error) return <h1>Oops xD</h1>
 
   return(
@@ -39,12 +39,16 @@ export default function ProductionEdit(props) {
         </Toolbar>
       </AppBar>
 
-      <ProductionEditForm
-        productionKinds={data.productionKinds}
-        productionKinds={data.productionKinds}
-        production={data.production}
-        updateProductionMutation={updateProduction}
-      />
+      {loading
+      ?
+        <Loading />
+      :
+        <ProductionEditForm
+          productionKinds={data.productionKinds}
+          production={data.production}
+          updateProductionMutation={updateProduction}
+        />
+      }
     </React.Fragment>
   )
 }

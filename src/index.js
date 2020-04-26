@@ -4,9 +4,10 @@ import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
+const productionURI = 'https://productions-api.herokuapp.com/graphql'
 
 const client = new ApolloClient({
-  uri: 'https://productions-api.herokuapp.com/graphql',
+  uri: productionURI
 });
 
 ReactDOM.render(
